@@ -18,7 +18,16 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-          }; 
+          };
+          hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+          };
         };
 
         keymap {
@@ -32,7 +41,7 @@
 //                    | GUI | LWR | ALT/ENT |   | HYPER/SPC | BKSP  | RSE |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &mt LCTRL TAB &mt LCTRL A &mt LALT S &mt LSHFT D &mt LGUI F &kp G   &kp H &mt RGUI J  &mt RSHFT K     &mt RALT L   &kp SEMI &lt 1 SQT
+   &mt LCTRL TAB &hm LCTRL A &hm LALT S &hm LSHFT D &hm LGUI F &kp G   &kp H &hm RGUI J  &hm RSHFT K     &hm RALT L   &kp SEMI &lt 1 SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT 
                &kp LALT &mo 1 &kp RET   &kp SPACE &mo 2 &kp RALT
                         >;
