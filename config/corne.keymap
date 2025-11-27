@@ -38,6 +38,15 @@
             flavor = "tap-preferred";
             bindings = <&ctrl_alt_mod>, <&kp S>;
           };
+          tmux_ctrl: tmux_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TMUX_CTRL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+          };
         };
 
         macros {
@@ -64,9 +73,9 @@
 //                    | GUI | LWR | ALT/ENT |   | HYPER/SPC | BKSP  | RSE |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &mt LCTRL TAB &hm LALT A &ht_ctrl_alt_s &hm LSHFT D &hm LGUI F &kp G   &kp H &hm RGUI J  &hm RSHFT K     &hm RALT L   &hm LC(B) SEMI &lt 1 SQT
+   &mt LCTRL TAB &hm LALT A &hm LCTRL S &hm LSHFT D &hm LGUI F &kp G   &kp H &hm RGUI J  &hm RSHFT K     &hm RCTRL L   &hm RALT SEMI &lt 1 SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT 
-               &kp LCTRL &mo 1 &kp RET   &kp SPACE &mo 2 &kp RCTRL
+               &tmux_ctrl LCTRL LC(B) &mo 1 &kp RET   &kp SPACE &mo 2 &tmux_ctrl RCTRL LC(B)
                         >;
                 };
 
